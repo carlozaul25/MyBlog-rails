@@ -4,11 +4,12 @@
 
 <p class= 'date'>
 	created <%= time_ago_in_words(@blog.created_at) %> ago |
-	<% if user_signe_in? %>
+	<% if user_signed_in? %>
 	<%= link_to 'Edit', edit_blog_path(@blog) %> |
 	<%= link_to 'Delete', blog_path(@blog), method: :delete, data: {confirm: "Are you sure?"} %>
 </p>
 <%end%>
+
 
 <p class='body'>
 	<%= @blog.body %>

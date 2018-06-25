@@ -1,7 +1,8 @@
+Current user: <h3><%= current_user.email%></h3><hr>
 <%@blog.each do |blog|%>
 <div class= blogs_wrapper>
 	<h2 class='title'><%= link_to blog.title, blog %></h2>
 	<p><%= truncate(blog.body, length:100) %></p>
-	<p class='date'><%= time_ago_in_words(blog.created_at)%> ago</p>
+	<p class='date'><%= time_ago_in_words(blog.created_at)%> ago</p><hr>
 </div>
 <% end %>

@@ -13,24 +13,20 @@
 
   <body>
 
-      <div id="sidebar">
-        <ul>
-          <li class='category'><%= link_to "Blogs", root_path %></li>
-          <li><%link_to "All blogs", root_path %></li>
+
+      <div>
+        <navbar class='navbar'>
+          <li><%= link_to "Blogs", root_path %></li>
           <li><%= link_to "About", about_path %></li>
-        </ul>
+        </navbar>
 
         <% if !user_signed_in? %>
-        <p class='sign_in'><%= link_to 'Sign in', new_user_session_path %></p>
+        <p><%= link_to 'Sign in', new_user_session_path %></p>
         <%end%>
-        <div id='header'>
-          <p>blogs</p>
-        </div>
-
       </div>
 
-      <div id='main_content'>
-          <div class='buttons'>
+      <div>
+          <div>
             <% if user_signed_in? %>
             <button class ='button'><%=link_to "create blog", new_blog_path %></button>
             <button class='button'><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
