@@ -7,9 +7,57 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
   </head>
 
   <body>
+
+      <div id="sidebar">
+        <ul>
+          <li class='category'><%= link_to "Blogs", root_path %></li>
+          <li><%link_to "All blogs", root_path %></li>
+          <li>About</li>
+        </ul>
+
+        <p class='sign_in'>Sign in</p>
+        <div id='header'>
+          <p>blogs</p>
+        </div>
+
+      </div>
+
+      <div id='main_content'>
+          <div class='buttons'>
+            <button class ='button'><%=link_to "create blog", new_blog_path %></button>
+            <button class='button'>Log out</button>
+          </div>
+
+      <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert") %>
+
+      <% end %>
+
+
     <%= yield %>
+      </div>
+
+
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

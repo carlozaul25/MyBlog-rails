@@ -4,12 +4,17 @@ class BlogsController < ApplicationController
 	end
 
 	def new
+		@blog = Blog.new
 	end
 
 	def create
 		@blog = Blog.new(blog_params)
-		@blog.save
+
+		if @blog.save
 		redirect_to @blog
+	else
+		render 'new'
+		end
 	end
 
 	def show
@@ -19,6 +24,6 @@ class BlogsController < ApplicationController
 	private
 
 		def blog_params
-			params.require(:blog).permit(:title, :body)
+			params.require(:blogs).permit(:title, :body)
 		end
 	end
