@@ -1,7 +1,5 @@
 class BlogsController < ApplicationController
-
-
-
+	before_action :authenticate_user!, exept: [:index, :show]
 
 	def index
 		@blog = Blog.all
