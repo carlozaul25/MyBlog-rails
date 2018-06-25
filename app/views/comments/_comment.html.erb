@@ -1,5 +1,5 @@
 <div>
-	<strong><p>From: <%= comment.name %></p></strong>
+	<strong><p>From: <%= comment.name %>-<%= current_user.email%></p></strong>
 	<p><%= comment.body %></p>
 	<p><%=time_ago_in_words(comment.created_at)%> Ago</p><hr>
 	<% if user_signed_in? %>
