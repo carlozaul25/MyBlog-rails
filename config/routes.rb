@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 end
 	root 'blogs#index'
 
+	get '/about', to: "pages#about"
 end
