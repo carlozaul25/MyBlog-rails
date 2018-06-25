@@ -1,0 +1,6 @@
+<%@blog.each do |blog|%>
+<div class= blogs_wrapper>
+	<h2 class='title'><%= link_to blog.title, blog %></h2>
+	<p class='date'><%= time_ago_in_words(blog.created_at)%> ago</p>
+</div>
+<% end %>
